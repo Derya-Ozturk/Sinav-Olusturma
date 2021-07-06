@@ -1,0 +1,58 @@
+﻿@using SinavOlusturmaWeb.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sınav Oluşturma</title>
+</head>
+<br />
+<body>
+
+</body>
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    
+    @Html.DropDownList("Basliklar")
+    
+    @Html.TextArea("indis")
+    
+
+}
+
+</html>
+
+
+
+@*@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#basliklar").change(function () {
+                /*alert("i");*/
+                var id = $(this).val();
+                var metinList = $("#Metinler");
+                metinList.empty();
+
+                $.ajax(
+                    {
+                        url: '/Home/MetinList',
+                        type: 'Post',
+                        dataType: 'json',
+                        data: { 'id': id },
+                        success: function (data) {
+                            $.each(data, function (index, option)){
+                                metinList.append('<option value=' + option.val + option.text + '></option>');
+                            }
+                        }
+                    })
+
+
+            })
+        })
+    </script>
+    }*@

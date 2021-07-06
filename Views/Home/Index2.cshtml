@@ -1,0 +1,20 @@
+﻿@using SinavOlusturmaWeb.Models
+@model List<Admin>
+@{
+    Layout = null;
+}
+
+<div>
+    <table>
+        <tr>
+            @foreach (var x in Model)
+            {
+            <tr>
+                <td>@x.AdminID</td>
+                <td>@x.Kullanici</td>
+                <td>@x.Sifre</td>
+
+            </tr>
+        }
+        </table>
+    </div>
